@@ -5,13 +5,13 @@ columns =[7,8,9,10,11,12,13,14,15,16,17,18]
 ops =["self","self","self","self","self","self","self","self","self","self","self","self"]
 
 [[annotation]]
-file="gnomad_exome.vcf.gz"
+file="gnomad_exomes.vcf.gz"
 fields=["AF","AF_afr","AF_amr","AF_asj","AF_eas","AF_fin","AF_nfe","AF_oth","AF_sas","AF_popmax","AC","AC_afr","AC_amr","AC_asj","AC_eas","AC_fin","AC_nfe","AC_oth","AC_sas","AC_popmax","AN","AN_afr","AN_amr","AN_asj","AN_eas","AN_fin","AN_nfe","AN_oth","AN_sas","AN_popmax","popmax","nhomalt","nhomalt_male","nhomalt_female"]
 names=["gnomADe_AF","gnomADe_AF_AFR","gnomADe_AF_AMR","gnomADe_AF_ASJ","gnomADe_AF_EAS","gnomADe_AF_FIN","gnomADe_AF_NFE","gnomADe_AF_OTH","gnomADe_AF_SAS","gnomADe_AF_POPMAX","gnomADe_AC","gnomADe_AC_AFR","gnomADe_AC_AMR","gnomADe_AC_ASJ","gnomADe_AC_EAS","gnomADe_AC_FIN","gnomADe_AC_NFE","gnomADe_AC_OTH","gnomADe_AC_SAS","gnomADe_AC_POPMAX","gnomADe_AN","gnomADe_AN_AFR","gnomADe_AN_AMR","gnomADe_AN_ASJ","gnomADe_AN_EAS","gnomADe_AN_FIN","gnomADe_AN_NFE","gnomADe_AN_OTH","gnomADe_AN_SAS","gnomADe_AN_POPMAX","gnomADe_POPMAX","gnomADe_Hom","gnomADe_Hom_Male","gnomADe_Hom_Female"]
 ops=["self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self"]
 
 [[annotation]]
-file="gnomad_genome.vcf.gz"
+file="gnomad_genomes.vcf.gz"
 fields=["AF","AC_POPMAX","AN","AN_POPMAX","POPMAX","GC","GC_Male","GC_Female","Hom","Hom_Male","Hom_Female"]
 names=["gnomadADg_AF","gnomadADg_AC_POPMAX","gnomadADg_AN","gnomadADg_AN_POPMAX","gnomadADg_POPMAX","gnomadADg_GC","gnomadADg_GC_Male","gnomadADg_GC_Female","gnomadADg_Hom","gnomadADg_Hom_Male","gnomadADg_Hom_Female"]
 ops=["self","self","self","self","self","self","self","self","self","self","self"]
