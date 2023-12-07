@@ -7,17 +7,23 @@ ops =["self","self","self","self","self","self","self","self","self","self","sel
 [[annotation]]
 file="gnomad_exomes.vcf.gz"
 fields=["AF","AF_afr","AF_amr","AF_asj","AF_eas","AF_fin","AF_nfe","AF_oth","AF_sas","AF_popmax","AC","AC_afr","AC_amr","AC_asj","AC_eas","AC_fin","AC_nfe","AC_oth","AC_sas","AC_popmax","AN","AN_afr","AN_amr","AN_asj","AN_eas","AN_fin","AN_nfe","AN_oth","AN_sas","AN_popmax","popmax","nhomalt","nhomalt_male","nhomalt_female"]
-names=["gnomADe_AF","gnomADe_AF_AFR","gnomADe_AF_AMR","gnomADe_AF_ASJ","gnomADe_AF_EAS","gnomADe_AF_FIN","gnomADe_AF_NFE","gnomADe_AF_OTH","gnomADe_AF_SAS","gnomADe_AF_POPMAX","gnomADe_AC","gnomADe_AC_AFR","gnomADe_AC_AMR","gnomADe_AC_ASJ","gnomADe_AC_EAS","gnomADe_AC_FIN","gnomADe_AC_NFE","gnomADe_AC_OTH","gnomADe_AC_SAS","gnomADe_AC_POPMAX","gnomADe_AN","gnomADe_AN_AFR","gnomADe_AN_AMR","gnomADe_AN_ASJ","gnomADe_AN_EAS","gnomADe_AN_FIN","gnomADe_AN_NFE","gnomADe_AN_OTH","gnomADe_AN_SAS","gnomADe_AN_POPMAX","gnomADe_POPMAX","gnomADe_Hom","gnomADe_Hom_Male","gnomADe_Hom_Female"]
+names=["gnomAD_AF","gnomAD_AF_AFR","gnomAD_AF_AMR","gnomAD_AF_ASJ","gnomAD_AF_EAS","gnomAD_AF_FIN","gnomAD_AF_NFE","gnomAD_AF_OTH","gnomAD_AF_SAS","gnomAD_AF_POPMAX","gnomAD_AC","gnomAD_AC_AFR","gnomAD_AC_AMR","gnomAD_AC_ASJ","gnomAD_AC_EAS","gnomAD_AC_FIN","gnomAD_AC_NFE","gnomAD_AC_OTH","gnomAD_AC_SAS","gnomAD_AC_POPMAX","gnomAD_AN","gnomAD_AN_AFR","gnomAD_AN_AMR","gnomAD_AN_ASJ","gnomAD_AN_EAS","gnomAD_AN_FIN","gnomAD_AN_NFE","gnomAD_AN_OTH","gnomAD_AN_SAS","gnomAD_AN_POPMAX","gnomAD_POPMAX","gnomAD_Hom","gnomAD_Hom_Male","gnomAD_Hom_Female"]
 ops=["self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self","self"]
 
-[[annotation]]
-file="gnomad_genomes.vcf.gz"
-fields=["AF","AC_POPMAX","AN","AN_POPMAX","POPMAX","GC","GC_Male","GC_Female","Hom","Hom_Male","Hom_Female"]
-names=["gnomadADg_AF","gnomadADg_AC_POPMAX","gnomadADg_AN","gnomadADg_AN_POPMAX","gnomadADg_POPMAX","gnomadADg_GC","gnomadADg_GC_Male","gnomadADg_GC_Female","gnomadADg_Hom","gnomadADg_Hom_Male","gnomadADg_Hom_Female"]
-ops=["self","self","self","self","self","self","self","self","self","self","self"]
+# [[annotation]]
+# file="gnomad_genomes.vcf.gz"
+# fields=["AF","AC_POPMAX","AN","AN_POPMAX","POPMAX","GC","GC_Male","GC_Female","Hom","Hom_Male","Hom_Female"]
+# names=["gnomadADg_AF","gnomadADg_AC_POPMAX","gnomadADg_AN","gnomadADg_AN_POPMAX","gnomadADg_POPMAX","gnomadADg_GC","gnomadADg_GC_Male","gnomadADg_GC_Female","gnomadADg_Hom","gnomadADg_Hom_Male","gnomadADg_Hom_Female"]
+# ops=["self","self","self","self","self","self","self","self","self","self","self"]
 
 [[annotation]]
 file="clinvar_20221119.vcf.gz"
 fields=["CLNSIG", "CLNDBN"]
 names=["clinvar_sig", "clinvar_disease_name"]
 ops=["self", "self"]
+
+[[annotation]]
+file = "dbNSFP.txt.gz"
+names = ["Ensembl_geneid","Ensembl_transcriptid","LRT_score","LRT_pred","MutationTaster_score","MutationTaster_pred","MutationAssessor_score","MutationAssessor_pred","PROVEAN_score","PROVEAN_pred","MetaSVM_score","MetaSVM_pred","MetaLR_score","MetaLR_pred","MetaRNN_score","MetaRNN_pred","M-CAP_score","M-CAP_pred","REVEL_score","BayesDel_addAF_score","BayesDel_addAF_pred","BayesDel_noAF_score","BayesDel_noAF_pred","CADD_phred","DANN_score","fathmm-MKL_coding_score","fathmm-MKL_coding_pred","GenoCanyon_score","gnomAD_exomes_AC","gnomAD_exomes_AN","gnomAD_exomes_AF","gnomAD_exomes_nhomalt","gnomAD_exomes_POPMAX_AF","gnomAD_genomes_AC","gnomAD_genomes_AN","gnomAD_genomes_AF","gnomAD_genomes_nhomalt","gnomAD_genomes_POPMAX_AF","Interpro_domain"]
+columns = [14,15,50,52,54,56,59,61,65,67,70,72,73,75,77,79,80,82,83,100,102,103,105,120,124,126,128,139,246,247,248,249,280,427,428,429,430,433,640]
+ops = ["first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first"]
