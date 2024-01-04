@@ -23,7 +23,7 @@ names=["clinvar_sig", "clinvar_disease_name"]
 ops=["self", "self"]
 
 [[annotation]]
-file = "dbNSFP.txt.gz"
+file = "dbNSFP4.3a_grch38.gz"
 names = ["Ensembl_geneid","Ensembl_transcriptid","LRT_score","LRT_pred","MutationTaster_score","MutationTaster_pred","MutationAssessor_score","MutationAssessor_pred","PROVEAN_score","PROVEAN_pred","MetaSVM_score","MetaSVM_pred","MetaLR_score","MetaLR_pred","MetaRNN_score","MetaRNN_pred","M-CAP_score","M-CAP_pred","REVEL_score","BayesDel_addAF_score","BayesDel_addAF_pred","BayesDel_noAF_score","BayesDel_noAF_pred","CADD_phred","DANN_score","fathmm-MKL_coding_score","fathmm-MKL_coding_pred","GenoCanyon_score","gnomAD_exomes_AC","gnomAD_exomes_AN","gnomAD_exomes_AF","gnomAD_exomes_nhomalt","gnomAD_exomes_POPMAX_AF","gnomAD_genomes_AC","gnomAD_genomes_AN","gnomAD_genomes_AF","gnomAD_genomes_nhomalt","gnomAD_genomes_POPMAX_AF","Interpro_domain"]
 columns = [14,15,50,52,54,56,59,61,65,67,70,72,73,75,77,79,80,82,83,100,102,103,105,120,124,126,128,139,246,247,248,249,280,427,428,429,430,433,640]
 ops = ["first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first"]
