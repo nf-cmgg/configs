@@ -17,7 +17,7 @@ ops=["self","self","self","self","self","self","self","self","self","self","self
 # ops=["self","self","self","self","self","self","self","self","self","self","self"]
 
 [[annotation]]
-file="clinvar_20221119.vcf.gz"
+file="clinvar_20251027.vcf.gz"
 fields=["CLNSIG", "CLNDBN"]
 names=["clinvar_sig", "clinvar_disease_name"]
 ops=["self", "self"]
