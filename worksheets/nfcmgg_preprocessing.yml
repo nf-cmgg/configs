@@ -123,6 +123,26 @@ samplesheets:
     include_func: |
       (data.organism?.toLowerCase() == 'homo sapiens' || data.genome?.toLowerCase() == 'grch38')
       && data.sample_type?.toLowerCase() == 'dna'
+    filter_func: |
+      // Tag based metrics filters
+      switch(data.tag?.toLowerCase()) {
+          case 'wes':
+              def coverage = data.20x_coverage_percentage?.toFloat()
+              if (data.proband == false) {
+                  return coverage >= 80.0f
+              }
+              // Default to 90.0% for all probands and samples where proband field was empty
+              return coverage >= 90.0f
+          case 'wgs':
+              def coverage = data.samtools_mean_depth?.toFloat()
+              if (data.proband == false) {
+                  return coverage >= 35.0f
+              }
+              // Default to 40X coverage for all probands and samples where proband field was empty
+              return coverage >= 40.0f
+          default:
+              return true
+      }
     fields:
       sample:
       pool:
@@ -136,6 +156,8 @@ samplesheets:
       snp_bam_index:
         source: snp_crai
       sex:
+      20x_coverage_percentage:
+      samtools_mean_depth:
   - name: nfcore_rnafusion_samplesheet.yaml
     description: The samplesheet for the nfcore/rnafusion pipeline
     include_func: |
