@@ -224,6 +224,9 @@ samplesheets:
         source: crai
       reads_count:
         source: clusters
+      20x_coverage_percentage:
+      40x_coverage_percentage:
+      samtools_mean_depth:
   - name: nfcmgg_exomecnv_samplesheet.yaml
     description: The samplesheet for the nf-cmgg/exomecnv pipeline
     include_func: |
