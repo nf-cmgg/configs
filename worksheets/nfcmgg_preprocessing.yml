@@ -226,5 +226,8 @@ samplesheets:
         source: family_number
       cram:
       crai:
+      40x_coverage_percentage:
+      20x_coverage_percentage:
+      samtools_mean_depth:
 samplesheets_settings:
   split_by: tag
