@@ -171,7 +171,7 @@ samplesheets:
       fastq_1:
       fastq_2:
       strandedness:
-      reads:
+      reads_count:
         source: clusters
   - name: nfcmgg_vivar_samplesheet.yaml
     description: The samplesheet for the nf-cmgg/vivar pipeline
@@ -184,6 +184,30 @@ samplesheets:
       )
       && data.sample_type?.toLowerCase() in ['dna', 'tissue']
       && !data.id?.startsWith('mtD')
+    filter_func: |
+      if (data.clusters?.toLong() < 1000000L) {
+          return false
+      }
+      switch(data.tag?.toLowerCase()) {
+          case 'wes':
+              def coverage = data.20x_coverage_percentage?.toFloat()
+              if (data.proband == false) {
+                  return coverage >= 80.0f
+              }
+              // Default to 90.0% for all probands and samples where proband field was empty
+              return coverage >= 90.0f
+          case 'wgs':
+              def coverage = data.samtools_mean_depth?.toFloat()
+              if (data.proband == false) {
+                  return coverage >= 35.0f
+              }
+              // Default to 40X coverage for all probands and samples where proband field was empty
+              return coverage >= 40.0f
+          // case 'scid_nbs': 
+          //     return data.40x_coverage_percentage?.toFloat() >= 90.0f
+          default:
+              return true
+      }
     fields:
       id:
       organism:
@@ -198,6 +222,8 @@ samplesheets:
         source: cram
       reads_index:
         source: crai
+      reads_count:
+        source: clusters
   - name: nfcmgg_exomecnv_samplesheet.yaml
     description: The samplesheet for the nf-cmgg/exomecnv pipeline
     include_func: |
@@ -237,8 +263,8 @@ samplesheets:
               }
               // Default to 40X coverage for all probands and samples where proband field was empty
               return coverage >= 40.0f
-          case 'scid_nbs': 
-              return data.40x_coverage_percentage?.toFloat() >= 90.0f
+          // case 'scid_nbs': 
+          //     return data.40x_coverage_percentage?.toFloat() >= 90.0f
           default:
               return true
       }
