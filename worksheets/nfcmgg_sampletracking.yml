@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/nf-cmgg/plugin/main/worksheet-schema.json
+name: nf-cmgg/sampletracking
+id_field: sample
+input:
+  sample:
+  family:
+  pool:
+  cram:
+    source: sample_bam
+  crai:
+    source: sample_bam_index
+  snp_cram:
+    source: snp_bam
+  snp_crai:
+    source: snp_bam_index
+  snp_fastq1:
+  snp_fastq2:
+  sex:
+    default: U
+  binsize:
+  normdup:
+  nipt:
+  vivar_project:
+  organism:
+  tag:
+metrics:
+  calculated_sex:
+    pattern: '.*_data$'
+    subpath: 'TODO' #TODO
+    filetype: tsv
+    id: Sample
+    field: calculated_sex
+  best_sample_match:
+    pattern: '.*_data$'
+    subpath: 'TODO' #TODO
+    filetype: tsv
+    id: Sample
+    field: picard-Best_match
+samplesheets:
+  - name: nfcmgg_smallvariants_samplesheet.yaml
+    description: The samplesheet for the nf-cmgg/smallvariants pipeline
+    filter_func: |
+      data.calculated_sex == data.sex && data.best_sample_match == data.sample
+    fields:
+      sample:
+      family:
+      cram:
+      crai:
+      calculated_sex:
+      best_sample_match:
+  - name: nfcmgg_vivar_samplesheet.yaml
+    description: The samplesheet for the nf-cmgg/vivar pipeline
+    filter_func: |
+      data.calculated_sex == data.sex && data.best_sample_match == data.sample
+    fields:
+      id:
+        source: sample
+      organism:
+      tag:
+      binsize:
+      project:
+        source: vivar_project
+      normdup:
+      nipt:
+      reads:
+        source: cram
+      reads_index:
+        source: crai
+      calculated_sex:
+      best_sample_match:
